@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>London Terror</title>
+  </head>
+  <body ng-app="LondonTerrorApp">
+
+    <div ng-controller="MainController" ng-init="onRefresh()">
+      Arrests number: <span ng-bind="arrestsData">Loading</span>
+      <button ng-click="onRefresh()">Refresh</button>
+      <ul ng-if="newsData.length">
+        <li ng-repeat="new in newsData" >
+          <a ng-href="{{new.url}}"><h4 ng-bind="new.name"></h4></a>
+        </li>
+      </ul>
+    </div>
+
+    <script src="/bundle.js"></script>
+  </body>
+</html>
